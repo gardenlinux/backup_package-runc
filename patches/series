@@ -1,0 +1,3 @@
+fix-hunking-debian-patch.patch
+disable-criu-bump-from-5-to-6-keep-upstream-default.patch
+skip-TestDevicesSetAllow.patch

@@ -1,0 +1,26 @@
+Tests: integration
+Architecture: amd64 arm64 armel armhf i386
+Depends: bats,
+         build-essential,
+         ca-certificates,
+         curl,
+         gawk,
+         git,
+         golang-any,
+         jq,
+         libseccomp-dev,
+         pkgconf,
+         runc,
+Restrictions: allow-stderr, needs-root, needs-internet, isolation-container, flaky
+
+Tests: checkpoint
+Architecture: amd64 arm64 armhf
+Depends: bats,
+         ca-certificates,
+         curl,
+         criu,
+         gawk,
+         golang-any,
+         jq,
+         runc,
+Restrictions: allow-stderr, needs-root, isolation-machine, flaky

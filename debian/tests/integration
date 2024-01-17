@@ -1,0 +1,8 @@
+#!/bin/sh
+
+ln -sf /usr/sbin/runc runc
+export GOPATH=/tmp/gopath
+export GOCACHE=/tmp/gocache
+go mod vendor
+make recvtty seccompagent
+script -e -c 'bats -t tests/integration'

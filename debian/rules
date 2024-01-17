@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+export DH_GOLANG_EXCLUDES      := libcontainer/integration contrib/cmd
+
+TAGS    := seccomp urfave_cli_no_docs
+LDFLAGS := -X main.version=$(DEB_VERSION_UPSTREAM) -X main.gitCommit=$(DEB_VERSION)
+
+%:
+	dh $@ --buildsystem=golang --with=golang --builddirectory=_build
+
+execute_after_dh_auto_build:
+	cd man && ./md2man-all.sh
+
+override_dh_auto_build:
+	dh_auto_build -- -tags "$(TAGS)" -ldflags "$(LDFLAGS)"
+
+override_dh_auto_test:
+	dh_auto_test -- -tags "$(TAGS)"

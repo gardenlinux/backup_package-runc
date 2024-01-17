@@ -4,5 +4,7 @@ jobs:
   build_pkg:
     uses: gardenlinux/package-build/.github/workflows/build_pkg.yml@main
     with:
-      build_options: nocheck noudeb terse
-      build_profiles: nocheck noudeb
+      source: git+https://github.com/opencontainers/runc
+      debian_source: native
+      git_filter: v[0-9\.]*$
+      git_tag_match: v([0-9\-]*)

@@ -1,0 +1,9 @@
+diff -Naur a/debian/patches/series b/debian/patches/series
+--- a/debian/patches/series	2024-01-17 16:13:15.256000567 +0000
++++ b/debian/patches/series	2024-01-17 16:25:29.328000917 +0000
+@@ -8,4 +8,4 @@
+ 0008-tests-enable-seccomp-default-action-tests-on-arm.patch
+ 0009-skip-test-file_test.go.patch
+ 0010-export-blockIODevice.patch
+-0011-Bump-go-criu-to-v6.patch
++#0011-Bump-go-criu-to-v6.patch
